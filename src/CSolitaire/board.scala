@@ -28,9 +28,9 @@ class board extends Application {
     //test card
     val c : Card = new Card(SUIT.CLUB, 7)
     //set deck pile to test
-    deck.setImage(getImage(c))
     //gui
     primaryStage.setTitle("Calculation Solitaire")
+    found1.setImage(c.img)
     val root = new GridPane
     root.setPadding(new Insets(10))
     root.setVgap(10)
@@ -54,24 +54,6 @@ class board extends Application {
     primaryStage.show()
   }
   //loads image from card
-  def getImage(card: Card): Image ={
-    val value = card.value match {
-      case 1 => "ace"
-      case x if 2 to 11 contains x => card.value.toString
-      case 11 => "jack"
-      case 12 => "queen"
-      case 13 => "king"
-      case whoa  => println("Unexpected case: " + whoa.toString)
-    }
-    val suit = card.suit match{
-      case SUIT.CLUB => "club"
-      case SUIT.HEART => "heart"
-      case SUIT.DIAMOND => "diamond"
-      case SUIT.SPADE => "spade"
-    }
-    val filename : String = value + "_of_" + suit + "s.png"
-    new Image("CSolitaire/resources/" + filename)
-  }
 
 }
 //main
