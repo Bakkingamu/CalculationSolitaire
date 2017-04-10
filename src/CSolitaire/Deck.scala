@@ -6,21 +6,15 @@ import scala.collection.mutable.ListBuffer
 class Deck {
   var cardList : ListBuffer[Card] = new ListBuffer[Card]()
   def fillDeck(): Unit ={
-    for(i <- 1 to 52){
-      if(i < 14){
-        cardList += new Card(SUIT.HEART, i % 13)
-      }
-      else if(i < 27){
-        cardList += new Card(SUIT.DIAMOND, i % 13)
-      }
-      else if(i < 40){
-        cardList += new Card(SUIT.CLUB, i % 13)
-      }
-      else{
-        cardList += new Card(SUIT.SPADE, i % 13)
-      }
+    for(i <- 1 to 13)
+          cardList += new Card(SUIT.HEART, i)
+    for(i <- 1 to 13)
+          cardList += new Card(SUIT.DIAMOND, i)
+    for(i <- 1 to 13)
+          cardList += new Card(SUIT.CLUB, i)
+    for(i <- 1 to 13)
+          cardList += new Card(SUIT.SPADE, i)
     }
-  }
 
   def removeTopCard(): Unit ={
     cardList -= cardList.head
