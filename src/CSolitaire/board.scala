@@ -23,16 +23,20 @@ class board extends Application {
     deckpile.shuffle()
     val discardpile = new DiscardPile(deckpile.cardList.head)
     deckpile.removeTopCard()
+    val found1Pile = new FoundationPile(new Card(SUIT.HEART, 1))
+    val found2Pile = new FoundationPile(new Card(SUIT.DIAMOND, 2))
+    val found3Pile = new FoundationPile(new Card(SUIT.CLUB, 3))
+    val found4Pile = new FoundationPile(new Card(SUIT.SPADE, 4))
     primaryStage.setTitle("Calculation Solitaire")
     val back : Image = new Image("CSolitaire/resources/backr.png")
     val border : Image = new Image("CSolitaire/resources/border.png")
     var heldCard : Card = null
     val deck = new ImageView
     val discard = new ImageView
-    val found1 = new ImageView
-    val found2 = new ImageView
-    val found3 = new ImageView
-    val found4 = new ImageView
+    val found1View = new ImageView
+    val found2View = new ImageView
+    val found3View = new ImageView
+    val found4View = new ImageView
     val waste1 = new ImageView
     val waste2 = new ImageView
     val waste3 = new ImageView
@@ -40,10 +44,10 @@ class board extends Application {
     val held = new ImageView
     discard.setImage(discardpile.card.img)
     deck.setImage(back)
-    found1.setImage(border)
-    found2.setImage(border)
-    found3.setImage(border)
-    found4.setImage(border)
+    found1View.setImage(found1Pile.cardList.head.img)
+    found2View.setImage(found2Pile.cardList.head.img)
+    found3View.setImage(found3Pile.cardList.head.img)
+    found4View.setImage(found4Pile.cardList.head.img)
     waste1.setImage(border)
     waste2.setImage(border)
     waste3.setImage(border)
@@ -63,7 +67,7 @@ class board extends Application {
     }
     var clickDeck : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
       def handle(event: MouseEvent): Unit = {
-        if(discardpile.isEmpty){
+        if(discardpile.isEmpty && heldCard == null){
           discardpile.setCard(deckpile.cardList.head)
           deckpile.removeTopCard()
           discard.setImage(discardpile.card.img)
@@ -80,12 +84,64 @@ class board extends Application {
         }
       }
     }
+    var clickFoundationPileOne : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if (heldCard != null)
+        {
+          if(found1Pile.checkCardValidity(heldCard)){
+            found1Pile.addCard(heldCard)
+            found1View.setImage(found1Pile.cardList.head.img)
+            heldCard = null
+            held.setImage(null)
+          }
+        }
+      }
+    }
+    var clickFoundationPileTwo : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if (heldCard != null)
+        {
+          if(found2Pile.checkCardValidity(heldCard)){
+            found2Pile.addCard(heldCard)
+            found2View.setImage(found2Pile.cardList.head.img)
+            heldCard = null
+            held.setImage(null)
+          }
+        }
+      }
+    }
+    var clickFoundationPilethree : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if (heldCard != null)
+        {
+          if(found3Pile.checkCardValidity(heldCard)){
+            found3Pile.addCard(heldCard)
+            found3View.setImage(found3Pile.cardList.head.img)
+            heldCard = null
+            held.setImage(null)
+          }
+        }
+      }
+    }
+    var clickFoundationPileFour : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if (heldCard != null)
+        {
+          if(found4Pile.checkCardValidity(heldCard)){
+            found4Pile.addCard(heldCard)
+            found4View.setImage(found4Pile.cardList.head.img)
+            heldCard = null
+            held.setImage(null)
+          }
+        }
+      }
+    }
     deck.setOnMouseClicked(clickDeck)
     discard.setOnMouseClicked(clickDiscard)
-    found1.setOnMouseClicked(clickPile)
-    found2.setOnMouseClicked(clickPile)
-    found3.setOnMouseClicked(clickPile)
-    found4.setOnMouseClicked(clickPile)
+    found1View.setOnMouseClicked(clickFoundationPileOne)
+    found2View.setOnMouseClicked(clickFoundationPileTwo)
+    found3View.setOnMouseClicked(clickFoundationPilethree)
+    found4View.setOnMouseClicked(clickFoundationPileFour)
     waste1.setOnMouseClicked(clickPile)
     waste2.setOnMouseClicked(clickPile)
     waste3.setOnMouseClicked(clickPile)
@@ -99,10 +155,10 @@ class board extends Application {
     //add all piles to grid
     root.add(deck, 1, 0)
     root.add(discard, 2, 0)
-    root.add(found1, 3, 0)
-    root.add(found2, 4, 0)
-    root.add(found3, 5, 0)
-    root.add(found4, 6, 0)
+    root.add(found1View, 3, 0)
+    root.add(found2View, 4, 0)
+    root.add(found3View, 5, 0)
+    root.add(found4View, 6, 0)
     root.add(waste1, 3, 1)
     root.add(waste2, 4, 1)
     root.add(waste3, 5, 1)
