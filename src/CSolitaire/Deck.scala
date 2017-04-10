@@ -1,6 +1,5 @@
 package CSolitaire
 import scala.collection.mutable.ListBuffer
-import scala.util.Random.shuffle
 /**
   * Created by DefaultPC on 4/9/2017.
   */
