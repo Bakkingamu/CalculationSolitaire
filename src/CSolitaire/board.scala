@@ -21,10 +21,12 @@ class board extends Application {
     val deckpile = new Deck
     deckpile.fillDeck()
     deckpile.shuffle()
+    val discardpile = new DiscardPile(deckpile.cardList.head)
+    deckpile.removeTopCard()
     primaryStage.setTitle("Calculation Solitaire")
     val back : Image = new Image("CSolitaire/resources/backr.png")
     val border : Image = new Image("CSolitaire/resources/border.png")
-    var currentImg : Image = null
+    var heldCard : Card = null
     val deck = new ImageView
     val discard = new ImageView
     val found1 = new ImageView
@@ -45,28 +47,39 @@ class board extends Application {
     waste2.setImage(border)
     waste3.setImage(border)
     waste4.setImage(border)
-    var click : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+    var clickDiscard : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
       def handle(event: MouseEvent): Unit = {
-        if (currentImg == null)
+        if (heldCard == null)
           {
-              currentImg = event.getSource().asInstanceOf[ImageView].getImage()
-              event.getSource().asInstanceOf[ImageView].setImage(border)
-          }else{
-          event.getSource().asInstanceOf[ImageView].setImage(currentImg)
-          currentImg = null
-        }
-
+            if(!discardpile.isEmpty){
+              heldCard = discardpile.card
+              discardpile.removeCard()
+              discard.setImage(border)
+            }
+          }
       }
     }
-    found1.setOnMouseClicked(click)
-    found2.setOnMouseClicked(click)
-    found3.setOnMouseClicked(click)
-    found4.setOnMouseClicked(click)
-    waste1.setOnMouseClicked(click)
-    waste2.setOnMouseClicked(click)
-    waste3.setOnMouseClicked(click)
-    waste4.setOnMouseClicked(click)
+    var clickDeck : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if(discardpile.isEmpty){
+          discardpile.setCard(deckpile.cardList.head)
+          deckpile.removeTopCard()
+          discard.setImage(discardpile.card.img)
+        }
+      }
+    }
+    var clickPile : EventHandler[MouseEvent] = new EventHandler[MouseEvent]() {
+      def handle(event: MouseEvent): Unit = {
+        if (heldCard != null)
+          {
+            event.getSource.asInstanceOf[ImageView].setImage(heldCard.img)
 
+        }
+      }
+    }
+    deck.setOnMouseClicked(clickDeck)
+    discard.setOnMouseClicked(clickDiscard)
+    found1.setOnMouseClicked(clickPile)
     val root = new GridPane
 
     root.setPadding(new Insets(10))

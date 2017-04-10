@@ -11,4 +11,8 @@ class DiscardPile(var card:Card) {
   def removeCard(): Unit ={
     card = null
   }
+  
+  def isEmpty : Boolean = {
+  card == null
+  }
 }
