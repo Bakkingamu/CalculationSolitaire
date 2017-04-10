@@ -18,6 +18,13 @@ import javafx.scene.input.{ClipboardContent, Dragboard, MouseEvent, TransferMode
 class board extends Application {
   override def start(primaryStage: Stage ) {
     //slot for each card on the board
+    val deckpile = new Deck
+    deckpile.fillDeck()
+    deckpile.shuffle()
+    primaryStage.setTitle("Calculation Solitaire")
+    val back : Image = new Image("CSolitaire/resources/backr.png")
+    val border : Image = new Image("CSolitaire/resources/border.png")
+    var currentImg : Image = null
     val deck = new ImageView
     val discard = new ImageView
     val found1 = new ImageView
@@ -28,24 +35,12 @@ class board extends Application {
     val waste2 = new ImageView
     val waste3 = new ImageView
     val waste4 = new ImageView
-    //test card
-    val c: Card = new Card(SUIT.CLUB, 1)
-    val c1: Card = new Card(SUIT.DIAMOND, 2)
-    val c2: Card = new Card(SUIT.HEART, 3)
-    val c3: Card = new Card(SUIT.SPADE, 4)
-    //set deck pile to test
-    //gui
-
-    primaryStage.setTitle("Calculation Solitaire")
-    val back : Image = new Image("CSolitaire/resources/backr.png")
+    discard.setImage(deckpile.cardList.head.img)
     deck.setImage(back)
-    val border : Image = new Image("CSolitaire/resources/border.png")
-    var currentImg : Image = null
-    discard.setImage(border)
-    found1.setImage(c.img)
-    found2.setImage(c1.img)
-    found3.setImage(c2.img)
-    found4.setImage(c3.img)
+    found1.setImage(border)
+    found2.setImage(border)
+    found3.setImage(border)
+    found4.setImage(border)
     waste1.setImage(border)
     waste2.setImage(border)
     waste3.setImage(border)

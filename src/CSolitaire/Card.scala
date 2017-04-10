@@ -9,7 +9,7 @@ import SUIT._
     def getImage(st: SUIT, valu: Int): Image ={
       val value = valu match {
         case 1 => "ace"
-        case x if 2 to 11 contains x => valu.toString
+        case x if 2 to 10 contains x => valu.toString
         case 11 => "jack"
         case 12 => "queen"
         case 13 => "king"
@@ -22,6 +22,7 @@ import SUIT._
         case SUIT.SPADE => "spade"
       }
       val filename : String = value + "_of_" + suit + "s.png"
+      println(filename)
       new Image("CSolitaire/resources/" + filename)
     }
   }
