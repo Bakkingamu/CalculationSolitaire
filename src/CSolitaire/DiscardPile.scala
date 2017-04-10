@@ -7,4 +7,8 @@ class DiscardPile(var card:Card) {
   def setCard(newCard:Card): Unit ={
     card = newCard
   }
+
+  def removeCard(): Unit ={
+    card = null
+  }
 }
