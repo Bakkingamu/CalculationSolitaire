@@ -37,7 +37,8 @@ class board extends Application {
     val waste2 = new ImageView
     val waste3 = new ImageView
     val waste4 = new ImageView
-    discard.setImage(deckpile.cardList.head.img)
+    val held = new ImageView
+    discard.setImage(discardpile.card.img)
     deck.setImage(back)
     found1.setImage(border)
     found2.setImage(border)
@@ -53,6 +54,7 @@ class board extends Application {
           {
             if(!discardpile.isEmpty){
               heldCard = discardpile.card
+              held.setImage(heldCard.img)
               discardpile.removeCard()
               discard.setImage(border)
             }
@@ -74,6 +76,7 @@ class board extends Application {
           {
             event.getSource.asInstanceOf[ImageView].setImage(heldCard.img)
             heldCard = null
+            held.setImage(null)
         }
       }
     }
@@ -83,6 +86,10 @@ class board extends Application {
     found2.setOnMouseClicked(clickPile)
     found3.setOnMouseClicked(clickPile)
     found4.setOnMouseClicked(clickPile)
+    waste1.setOnMouseClicked(clickPile)
+    waste2.setOnMouseClicked(clickPile)
+    waste3.setOnMouseClicked(clickPile)
+    waste4.setOnMouseClicked(clickPile)
     val root = new GridPane
 
     root.setPadding(new Insets(10))
@@ -100,6 +107,7 @@ class board extends Application {
     root.add(waste2, 4, 1)
     root.add(waste3, 5, 1)
     root.add(waste4, 6, 1)
+    root.add(held, 2, 1)
     //gui
     val scene = new Scene(root)
     primaryStage.setScene(scene)
