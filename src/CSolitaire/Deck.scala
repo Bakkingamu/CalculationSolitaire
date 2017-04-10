@@ -21,6 +21,6 @@ class Deck {
   }
 
   def shuffle(): Unit ={
-    util.Random.shuffle(cardList)
+    cardList = util.Random.shuffle(cardList)
   }
 }
