@@ -14,4 +14,7 @@ class WastePile {
   def removeTopCard(): Unit ={
     cardList -= cardList.head
   }
+  def isEmpty : Boolean = {
+    cardList.isEmpty
+  }
 }
