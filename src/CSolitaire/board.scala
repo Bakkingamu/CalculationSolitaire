@@ -73,13 +73,16 @@ class board extends Application {
         if (heldCard != null)
           {
             event.getSource.asInstanceOf[ImageView].setImage(heldCard.img)
-
+            heldCard = null
         }
       }
     }
     deck.setOnMouseClicked(clickDeck)
     discard.setOnMouseClicked(clickDiscard)
     found1.setOnMouseClicked(clickPile)
+    found2.setOnMouseClicked(clickPile)
+    found3.setOnMouseClicked(clickPile)
+    found4.setOnMouseClicked(clickPile)
     val root = new GridPane
 
     root.setPadding(new Insets(10))
