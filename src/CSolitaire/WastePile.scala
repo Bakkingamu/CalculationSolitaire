@@ -8,7 +8,7 @@ import scala.collection.mutable.ListBuffer
 class WastePile {
   var cardList:ListBuffer[Card] = new ListBuffer[Card]()
   def addCard(card:Card){
-      cardList += card
+      cardList.insert(0, card)
   }
 
   def removeTopCard(): Unit ={

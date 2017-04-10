@@ -1,5 +1,6 @@
 package CSolitaire
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 /**
@@ -10,7 +11,7 @@ class FoundationPile(var startCard:Card) {
   cardList += startCard
   def addCard(card:Card){
     if(card.value == cardList.last.value + 2 || card.value == cardList.last.value - 11)
-      cardList += card
+      cardList.insert(0, card)
   }
 
   def removeTopCard(): Unit ={
