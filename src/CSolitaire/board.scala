@@ -14,7 +14,7 @@ import javafx.scene.control.{Label, Menu, MenuBar, MenuItem}
 import javafx.event.ActionEvent
 import javafx.scene.input.MouseEvent
 import javafx.scene.text.{Font, Text}
-
+import javafx.geometry.Pos
 
 class board extends Application {
   override def start(primaryStage: Stage ) {
@@ -88,7 +88,6 @@ class board extends Application {
           if(isWaste(str)){ // if its the waste
             if(!getWastePile(str).isEmpty){ //if its not empty pick up
               hand = getWastePile(str).cardList.head
-              primaryStage.getScene.setCursor(new ImageCursor(hand.img,hand.img.getWidth() / 2, hand.img.getHeight() / 2))
               getWastePile(str).removeTopCard()
               holding = true
               source = str
@@ -98,7 +97,6 @@ class board extends Application {
           { //must be discard
             if(!discardpile.isEmpty){ //if its not empty pick up
               hand = discardpile.card
-              primaryStage.getScene.setCursor(new ImageCursor(hand.img,hand.img.getWidth() / 2, hand.img.getHeight() / 2))
               discardpile.removeCard()
               holding = true
               source = str
@@ -280,7 +278,7 @@ class board extends Application {
       if(holding){
         held.setImage(hand.img)
       }else{
-        held.setImage(border)
+        held.setImage(null)
       }
       undoMenuItem.setDisable(!undoPossible)
 
@@ -431,6 +429,14 @@ class board extends Application {
         helpStage.show()
       }
     }
+    val moveMouse : EventHandler[MouseEvent] = new EventHandler[MouseEvent] {
+      override def handle(event: MouseEvent) = {
+        held.setTranslateX(event.getSceneX-50)
+        held.setTranslateY(event.getSceneY-50)
+
+
+      }
+    }
     //--------------------GUI LISTENERS END--------------------
     //set up GUI
     deck.setOnMouseClicked(clickDeck)
@@ -473,13 +479,18 @@ class board extends Application {
     root.add(waste2View, 4, 2)
     root.add(waste3View, 5, 2)
     root.add(waste4View, 6, 2)
-    //root.add(held, 2, 1)
     //finish gui
     update()
     val vbox : VBox = new VBox()
     vbox.getChildren.add(bar)
     vbox.getChildren.add(root)
-    val scene = new Scene(vbox)
+    val stackPane = new StackPane()
+    stackPane.setOnMouseMoved(moveMouse)
+    stackPane.getChildren.add(vbox)
+    stackPane.setAlignment(Pos.TOP_LEFT )
+    held.setMouseTransparent(true)
+    stackPane.getChildren.add(held)
+    val scene = new Scene(stackPane)
     primaryStage.setScene(scene)
     primaryStage.show()
     primaryStage.setResizable(false)
