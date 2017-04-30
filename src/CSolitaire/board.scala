@@ -55,6 +55,7 @@ class board extends Application {
     val waste3Pile = new WastePile
     val waste4Pile = new WastePile
     //GUI
+    val root = new GridPane
     primaryStage.setTitle("Calculation Solitaire")
     val back : Image = new Image("CSolitaire/resources/backr.png")
     val border : Image = new Image("CSolitaire/resources/border.png")
@@ -64,10 +65,10 @@ class board extends Application {
     val found2View = new ImageView
     val found3View = new ImageView
     val found4View = new ImageView
-    val waste1View = new ImageView
-    val waste2View = new ImageView
-    val waste3View = new ImageView
-    val waste4View = new ImageView
+    val waste1View = new StackPane()
+    val waste2View = new StackPane()
+    val waste3View = new StackPane()
+    val waste4View = new StackPane()
     val held = new ImageView
     val bar: MenuBar = new MenuBar()
     val gameMenu : Menu = new Menu("Game")
@@ -237,6 +238,14 @@ class board extends Application {
     }
     //update refreshes all the images on the board and is called after every interaction, it also disables or enabled the undo function depending on if the player is able to undo
     def update(): Unit ={
+      waste1View.getChildren.clear()
+      waste1View.getChildren.add(new ImageView(border))
+      waste2View.getChildren.clear()
+      waste2View.getChildren.add(new ImageView(border))
+      waste3View.getChildren.clear()
+      waste3View.getChildren.add(new ImageView(border))
+      waste4View.getChildren.clear()
+      waste4View.getChildren.add(new ImageView(border))
       found1View.setImage(found1Pile.cardList.head.img)
       found2View.setImage(found2Pile.cardList.head.img)
       found3View.setImage(found3Pile.cardList.head.img)
@@ -246,29 +255,33 @@ class board extends Application {
       else
         deck.setImage(back)
       if(!waste1Pile.isEmpty){
-        waste1View.setImage(waste1Pile.cardList.head.img)
-      }else{
-        waste1View.setImage(border)
+        for(a <- waste1Pile.cardList.indices){
+          val img : ImageView = new ImageView(waste1Pile.cardList.reverse(a).img)
+          img.setTranslateY(a*50)
+          waste1View.getChildren.add(img)
+        }
       }
-
       if(!waste2Pile.isEmpty){
-        waste2View.setImage(waste2Pile.cardList.head.img)
-      }else{
-        waste2View.setImage(border)
+        for(a <- waste2Pile.cardList.indices){
+          val img : ImageView = new ImageView(waste2Pile.cardList.reverse(a).img)
+          img.setTranslateY(a*50)
+          waste2View.getChildren.add(img)
+        }
       }
-
       if(!waste3Pile.isEmpty){
-        waste3View.setImage(waste3Pile.cardList.head.img)
-      }else{
-        waste3View.setImage(border)
+        for(a <- waste3Pile.cardList.indices){
+          val img : ImageView = new ImageView(waste3Pile.cardList.reverse(a).img)
+          img.setTranslateY(a*50)
+          waste3View.getChildren.add(img)
+        }
       }
-
       if(!waste4Pile.isEmpty){
-        waste4View.setImage(waste4Pile.cardList.head.img)
-      }else{
-        waste4View.setImage(border)
+        for(a <- waste4Pile.cardList.indices){
+          val img : ImageView = new ImageView(waste4Pile.cardList.reverse(a).img)
+          img.setTranslateY(a*50)
+          waste4View.getChildren.add(img)
+        }
       }
-
       if(discardpile.card != null){
         discard.setImage(discardpile.card.img)
       }else{
@@ -281,7 +294,6 @@ class board extends Application {
         held.setImage(null)
       }
       undoMenuItem.setDisable(!undoPossible)
-
       sequence1.removePartOfString(found1Pile.cardList.head.value)
       sequence2.removePartOfString(found2Pile.cardList.head.value)
       sequence3.removePartOfString(found3Pile.cardList.head.value)
@@ -294,9 +306,6 @@ class board extends Application {
        sequenceLabel3.setText(sequence3.currentSequenceString)
       if(!sequence4.initialSequenceString.equals(sequence4.currentSequenceString))
         sequenceLabel4.setText(sequence4.currentSequenceString)
-
-
-
       if(found1Pile.isLocked && found2Pile.isLocked && found3Pile.isLocked && found4Pile.isLocked){
         var winStage : Stage = new Stage()
         winStage.initModality(Modality.NONE)
@@ -459,11 +468,10 @@ class board extends Application {
     gameMenu.getItems.add(winGameItem)
     gameMenu.getItems.add(helpMenuItem)
     bar.getMenus.addAll(gameMenu)
-    val root = new GridPane
+
     root.setPadding(new Insets(10))
     root.setVgap(10)
     root.setHgap(10)
-    root.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)))
     //add all piles to grid
     root.add(deck, 1, 0)
     root.add(discard, 2, 0)
@@ -490,10 +498,14 @@ class board extends Application {
     stackPane.setAlignment(Pos.TOP_LEFT )
     held.setMouseTransparent(true)
     stackPane.getChildren.add(held)
+    stackPane.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)))
     val scene = new Scene(stackPane)
+    primaryStage.setMaximized(true)
     primaryStage.setScene(scene)
+    scene.setFill(Color.GREEN)
     primaryStage.show()
-    primaryStage.setResizable(false)
+
+    //primaryStage.setResizable(false)
   }
 }
 //main
