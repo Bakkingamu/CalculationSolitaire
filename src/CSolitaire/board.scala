@@ -73,6 +73,7 @@ class board extends Application {
     val gameMenu : Menu = new Menu("Game")
     val undoMenuItem : MenuItem = new MenuItem("Undo")
     val winGameItem : MenuItem = new MenuItem("Win Game")
+    val helpMenuItem : MenuItem = new MenuItem("Help")
     //--------------------HELPER METHODS--------------------
     //interact decides what to do when a pile is clicked. The parameter is a string describing the pile clicked
     def interact(str: String): Unit = {
@@ -302,9 +303,9 @@ class board extends Application {
         var winStage : Stage = new Stage()
         winStage.initModality(Modality.NONE)
         winStage.initOwner(primaryStage)
-        var winVBox : VBox = new VBox(20)
+        var winVBox : VBox = new VBox(100)
         winVBox.getChildren().add(new Text("You won the game!"))
-        var winScene = new Scene(winVBox, 300, 200)
+        var winScene = new Scene(winVBox, 100, 50)
         winStage.setScene(winScene)
         winStage.show()
       }
@@ -406,6 +407,30 @@ class board extends Application {
         update()
       }
     }
+
+    val helpClick : EventHandler[ActionEvent] = new EventHandler[ActionEvent] {
+      override def handle(event: ActionEvent): Unit = {
+        var helpStage : Stage = new Stage()
+        helpStage.initModality(Modality.NONE)
+        helpStage.initOwner(primaryStage)
+        var helpVBox : VBox = new VBox(20)
+        helpVBox.getChildren().add(new Text("Calculation begins with the bottom of four foundations showing; ace, two, three and four. " +
+          "\nYou can build on these foundations in the following sequence, and only in this sequence:" +
+          "\n\n\nIf the foundation card is A the next cards can be: 2,3,4,5,6,7,8,9,10,J,Q,K" +
+          "\nfoundation card 2 next cards are: 4,6,8,10,Q,A,3,5,7,9,J,K" +
+          "\nfoundation card 3, next cards are: 6,9,Q,2,5,8,J,A,4,7,10,K" +
+          "\nfoundation card 4, next cards are: 8,Q,3,7,J,2,6,10,A,5,9,K" +
+          "\n\nPick one card from the deck at a time and add it to one of the foundations while following these four card sequences. " +
+          "\nIf you can't add the card to a foundation, place it on one of the four wastepiles below the foundations. " +
+          "\nThe top card on each wastepile can be added to a foundation when its turn in the sequence comes up. " +
+          "\nBe careful; the way you distribute the cards on the wastepiles might help you win, or lose. " +
+          "\nThere is no re-deal."))
+        var winScene = new Scene(helpVBox, 650, 300)
+        helpStage.setScene(winScene)
+        helpStage.setResizable(false)
+        helpStage.show()
+      }
+    }
     //--------------------GUI LISTENERS END--------------------
     //set up GUI
     deck.setOnMouseClicked(clickDeck)
@@ -422,9 +447,11 @@ class board extends Application {
     exitMenuItem.setOnAction(exitClick)
     undoMenuItem.setOnAction(undoClick)
     winGameItem.setOnAction(winClick)
+    helpMenuItem.setOnAction(helpClick)
     gameMenu.getItems.add(undoMenuItem)
     gameMenu.getItems.add(exitMenuItem)
     gameMenu.getItems.add(winGameItem)
+    gameMenu.getItems.add(helpMenuItem)
     bar.getMenus.addAll(gameMenu)
     val root = new GridPane
     root.setPadding(new Insets(10))

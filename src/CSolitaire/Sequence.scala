@@ -77,10 +77,12 @@ class Sequence(var startValue : Int) {
 
   def removePartOfString(value: Int): Unit = {
     if(startValue == 1){
-      if(value != 13)
-      currentSequenceString = initialSequenceString.substring(value)
-      else
-        currentSequenceString = ""
+      if(startValue != value){
+        value match {
+          case 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 => currentSequenceString = initialSequenceString.substring(value)
+          case 0 | 13 => currentSequenceString = ""
+        }
+      }
     }
     else if(startValue == 2){
       if(startValue != value) {
