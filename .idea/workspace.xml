@@ -9,11 +9,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/CSolitaire/board.scala" line="353" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6307b77c-9541-4912-9eaf-34d870afee58" name="Default" comment="Changed FoundationPile.">
+    <list default="true" id="6307b77c-9541-4912-9eaf-34d870afee58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/Card.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/Card.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/Sequence.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/Sequence.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/board.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/board.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="board.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/board.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+            <state relative-caret-position="442">
+              <caret line="284" column="16" lean-forward="false" selection-start-line="284" selection-start-column="16" selection-end-line="284" selection-end-column="16" />
               <folding>
                 <element signature="e#64#101#0" expanded="true" />
               </folding>
@@ -75,8 +73,8 @@
       <file leaf-file-name="FoundationPile.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+            <state relative-caret-position="578">
+              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -597,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491785975625</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added &quot;dragging&quot;. It just changes the cursor to a small version of the card. All I have right now for that. Added a win menu item to show we can win the game. When a King is placed inside of a foundation pile, the back now shows to symbolize locking (which has also been implemented).">
+      <created>1493540244587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1493540244587</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -643,7 +648,8 @@
     <MESSAGE value="Changed deck implementation." />
     <MESSAGE value="Changed FoundationPile, WastePile, and Deck implementations" />
     <MESSAGE value="Changed FoundationPile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed FoundationPile." />
+    <MESSAGE value="Added &quot;dragging&quot;. It just changes the cursor to a small version of the card. All I have right now for that. Added a win menu item to show we can win the game. When a King is placed inside of a foundation pile, the back now shows to symbolize locking (which has also been implemented)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;dragging&quot;. It just changes the cursor to a small version of the card. All I have right now for that. Added a win menu item to show we can win the game. When a King is placed inside of a foundation pile, the back now shows to symbolize locking (which has also been implemented)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1020,16 +1026,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+        <state relative-caret-position="578">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSolitaire/board.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+        <state relative-caret-position="442">
+          <caret line="284" column="16" lean-forward="false" selection-start-line="284" selection-start-column="16" selection-end-line="284" selection-end-column="16" />
           <folding>
             <element signature="e#64#101#0" expanded="true" />
           </folding>

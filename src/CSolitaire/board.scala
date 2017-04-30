@@ -15,6 +15,7 @@ import javafx.scene.control.Menu
 import javafx.scene.control.MenuItem
 import javafx.event.ActionEvent
 import javafx.scene.input.MouseEvent
+import javafx.scene.text.Text
 
 
 class board extends Application {
@@ -272,6 +273,18 @@ class board extends Application {
         held.setImage(border)
       }
       undoMenuItem.setDisable(!undoPossible)
+
+      if(found1Pile.isLocked && found2Pile.isLocked && found3Pile.isLocked && found4Pile.isLocked){
+        var winStage : Stage = new Stage()
+        winStage.initModality(Modality.NONE)
+        winStage.initOwner(primaryStage)
+        var winVBox : VBox = new VBox(20)
+        winVBox.getChildren().add(new Text("You won the game!"));
+        var winScene = new Scene(winVBox, 300, 200);
+        winStage.setScene(winScene);
+        winStage.show();
+      }
+
     }
     //--------------------HELPER METHODS END--------------------
 

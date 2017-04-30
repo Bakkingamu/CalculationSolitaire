@@ -8,6 +8,7 @@ import scala.collection.mutable.ListBuffer
 class FoundationPile(var startCard : Card) {
   var cardList:ListBuffer[Card] = new ListBuffer[Card]()
   val increment: Int = startCard.value
+  var isLocked : Boolean = false
   cardList += startCard
   def addCard(card:Card){
     if(checkCardValidity(card))
@@ -40,5 +41,6 @@ class FoundationPile(var startCard : Card) {
 
   def lockFoundation(): Unit = {
     cardList.insert(0, new Card(SUIT.HEART, 0))
+    isLocked = true
   }
 }
