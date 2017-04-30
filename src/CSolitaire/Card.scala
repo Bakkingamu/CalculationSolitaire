@@ -4,10 +4,13 @@ import javafx.scene.image.Image
   * Created by Justin on 3/21/2017.
   */
 import SUIT._
-  class Card (var suit: SUIT, var value: Int){
+  class Card(var suit: SUIT, var value: Int){
     var img : Image = getImage(suit, value)
+
     def getImage(st: SUIT, valu: Int): Image ={
+      var filename : String = ""
       val value = valu match {
+        case 0 => "back"
         case 1 => "ace"
         case x if 2 to 10 contains x => valu.toString
         case 11 => "jack"
@@ -21,7 +24,10 @@ import SUIT._
         case SUIT.DIAMOND => "diamond"
         case SUIT.SPADE => "spade"
       }
-      val filename : String = value + "_of_" + suit + "s.png"
+      if(value == "back")
+        filename = "backr.png"
+      else
+        filename = value + "_of_" + suit + "s.png"
       println(filename)
       new Image("CSolitaire/resources/" + filename)
     }

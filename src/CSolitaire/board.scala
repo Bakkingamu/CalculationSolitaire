@@ -4,7 +4,7 @@ package CSolitaire
   */
 import javafx.application.Application
 import javafx.geometry.Insets
-import javafx.scene.Scene
+import javafx.scene.{Cursor, ImageCursor, Scene}
 import javafx.scene.image.{Image, ImageView}
 import javafx.scene.layout._
 import javafx.scene.paint.Color
@@ -15,6 +15,7 @@ import javafx.scene.control.Menu
 import javafx.scene.control.MenuItem
 import javafx.event.ActionEvent
 import javafx.scene.input.MouseEvent
+
 
 class board extends Application {
   override def start(primaryStage: Stage ) {
@@ -37,6 +38,10 @@ class board extends Application {
     val found2Pile = new FoundationPile(new Card(SUIT.DIAMOND, 2))
     val found3Pile = new FoundationPile(new Card(SUIT.CLUB, 3))
     val found4Pile = new FoundationPile(new Card(SUIT.SPADE, 4))
+    //val sequence1 = new Sequence(1)
+    //val sequence2 = new Sequence(2)
+    //val sequence3 = new Sequence(3)
+    //val sequence4 = new Sequence(4)
     //create wastes
     val waste1Pile = new WastePile
     val waste2Pile = new WastePile
@@ -60,6 +65,7 @@ class board extends Application {
     val bar: MenuBar = new MenuBar()
     val gameMenu : Menu = new Menu("Game")
     val undoMenuItem : MenuItem = new MenuItem("Undo")
+    val winGameItem : MenuItem = new MenuItem("Win Game")
     //--------------------HELPER METHODS--------------------
     //interact decides what to do when a pile is clicked. The parameter is a string describing the pile clicked
     def interact(str: String): Unit = {
@@ -74,6 +80,7 @@ class board extends Application {
           if(isWaste(str)){ // if its the waste
             if(!getWastePile(str).isEmpty){ //if its not empty pick up
               hand = getWastePile(str).cardList.head
+              primaryStage.getScene.setCursor(new ImageCursor(hand.img,hand.img.getWidth() / 2, hand.img.getHeight() / 2))
               getWastePile(str).removeTopCard()
               holding = true
               source = str
@@ -83,6 +90,7 @@ class board extends Application {
           { //must be discard
             if(!discardpile.isEmpty){ //if its not empty pick up
               hand = discardpile.card
+              primaryStage.getScene.setCursor(new ImageCursor(hand.img,hand.img.getWidth() / 2, hand.img.getHeight() / 2))
               discardpile.removeCard()
               holding = true
               source = str
@@ -103,12 +111,18 @@ class board extends Application {
         {
           getFoundPile(destination).addCard(hand) //place in foundation
           emptyHand()
-          createUndo(destination)
+          primaryStage.getScene.setCursor(Cursor.DEFAULT)
+          if(getFoundPile(destination).cardList.head.value == 13){
+            getFoundPile(destination).lockFoundation()
+          }
+          else
+            createUndo(destination)
         }
         else
         {
           moveBack(source, hand) //move held card back to its source
           emptyHand()
+          primaryStage.getScene.setCursor(Cursor.DEFAULT)
         }
       }
       else //destination not foundation
@@ -119,12 +133,14 @@ class board extends Application {
           {
             moveBack(source,hand) //if it is the move is invalid so move the card back
             emptyHand()
+            primaryStage.getScene.setCursor(Cursor.DEFAULT)
           }
           else // if the destination is waste and the source was the discard
           {
             getWastePile(destination).addCard(hand)
             createUndo(destination)
             emptyHand()
+            primaryStage.getScene.setCursor(Cursor.DEFAULT)
           }
         }
       }
@@ -338,6 +354,21 @@ class board extends Application {
         System.exit(0)
       }
     }
+
+    val winClick : EventHandler[ActionEvent] =  new EventHandler[ActionEvent] {
+      def handle(event : ActionEvent): Unit = {
+        waste1Pile.addCard(new Card(SUIT.SPADE, 13))
+        waste2Pile.addCard(new Card(SUIT.CLUB, 13))
+        waste3Pile.addCard(new Card(SUIT.DIAMOND, 13))
+        waste4Pile.addCard(new Card(SUIT.HEART, 13))
+        found1Pile.finishFoundation()
+        found2Pile.finishFoundation()
+        found3Pile.finishFoundation()
+        found4Pile.finishFoundation()
+        discardpile.removeCard()
+        update()
+      }
+    }
     //--------------------GUI LISTENERS END--------------------
     //set up GUI
     deck.setOnMouseClicked(clickDeck)
@@ -353,8 +384,10 @@ class board extends Application {
     val exitMenuItem : MenuItem = new MenuItem("Exit")
     exitMenuItem.setOnAction(exitClick)
     undoMenuItem.setOnAction(undoClick)
+    winGameItem.setOnAction(winClick)
     gameMenu.getItems.add(undoMenuItem)
     gameMenu.getItems.add(exitMenuItem)
+    gameMenu.getItems.add(winGameItem)
     bar.getMenus.addAll(gameMenu)
     val root = new GridPane
     root.setPadding(new Insets(10))
