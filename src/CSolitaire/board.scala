@@ -10,12 +10,10 @@ import javafx.scene.layout._
 import javafx.scene.paint.Color
 import javafx.stage._
 import javafx.event.EventHandler
-import javafx.scene.control.MenuBar
-import javafx.scene.control.Menu
-import javafx.scene.control.MenuItem
+import javafx.scene.control.{Label, Menu, MenuBar, MenuItem}
 import javafx.event.ActionEvent
 import javafx.scene.input.MouseEvent
-import javafx.scene.text.Text
+import javafx.scene.text.{Font, Text}
 
 
 class board extends Application {
@@ -39,10 +37,18 @@ class board extends Application {
     val found2Pile = new FoundationPile(new Card(SUIT.DIAMOND, 2))
     val found3Pile = new FoundationPile(new Card(SUIT.CLUB, 3))
     val found4Pile = new FoundationPile(new Card(SUIT.SPADE, 4))
-    //val sequence1 = new Sequence(1)
-    //val sequence2 = new Sequence(2)
-    //val sequence3 = new Sequence(3)
-    //val sequence4 = new Sequence(4)
+    val sequence1 = new Sequence(1)
+    val sequence2 = new Sequence(2)
+    val sequence3 = new Sequence(3)
+    val sequence4 = new Sequence(4)
+    var sequenceLabel1 : Label = new Label(sequence1.initialSequenceString)
+    var sequenceLabel2 : Label = new Label(sequence2.initialSequenceString)
+    var sequenceLabel3 : Label = new Label(sequence3.initialSequenceString)
+    var sequenceLabel4 : Label = new Label(sequence4.initialSequenceString)
+    sequenceLabel1.setFont(Font.font("Palatino", 28))
+    sequenceLabel2.setFont(Font.font("Palatino", 28))
+    sequenceLabel3.setFont(Font.font("Palatino", 28))
+    sequenceLabel4.setFont(Font.font("Palatino", 28))
     //create wastes
     val waste1Pile = new WastePile
     val waste2Pile = new WastePile
@@ -236,7 +242,10 @@ class board extends Application {
       found2View.setImage(found2Pile.cardList.head.img)
       found3View.setImage(found3Pile.cardList.head.img)
       found4View.setImage(found4Pile.cardList.head.img)
-      deck.setImage(back)
+      if(deckpile.cardList.isEmpty)
+        deck.setImage(border)
+      else
+        deck.setImage(back)
       if(!waste1Pile.isEmpty){
         waste1View.setImage(waste1Pile.cardList.head.img)
       }else{
@@ -274,15 +283,30 @@ class board extends Application {
       }
       undoMenuItem.setDisable(!undoPossible)
 
+      sequence1.removePartOfString(found1Pile.cardList.head.value)
+      sequence2.removePartOfString(found2Pile.cardList.head.value)
+      sequence3.removePartOfString(found3Pile.cardList.head.value)
+      sequence4.removePartOfString(found4Pile.cardList.head.value)
+      if(!sequence1.initialSequenceString.equals(sequence1.currentSequenceString))
+        sequenceLabel1.setText(sequence1.currentSequenceString)
+      if(!sequence2.initialSequenceString.equals(sequence2.currentSequenceString))
+        sequenceLabel2.setText(sequence2.currentSequenceString)
+      if(!sequence3.initialSequenceString.equals(sequence3.currentSequenceString))
+       sequenceLabel3.setText(sequence3.currentSequenceString)
+      if(!sequence4.initialSequenceString.equals(sequence4.currentSequenceString))
+        sequenceLabel4.setText(sequence4.currentSequenceString)
+
+
+
       if(found1Pile.isLocked && found2Pile.isLocked && found3Pile.isLocked && found4Pile.isLocked){
         var winStage : Stage = new Stage()
         winStage.initModality(Modality.NONE)
         winStage.initOwner(primaryStage)
         var winVBox : VBox = new VBox(20)
-        winVBox.getChildren().add(new Text("You won the game!"));
-        var winScene = new Scene(winVBox, 300, 200);
-        winStage.setScene(winScene);
-        winStage.show();
+        winVBox.getChildren().add(new Text("You won the game!"))
+        var winScene = new Scene(winVBox, 300, 200)
+        winStage.setScene(winScene)
+        winStage.show()
       }
 
     }
@@ -414,11 +438,15 @@ class board extends Application {
     root.add(found2View, 4, 0)
     root.add(found3View, 5, 0)
     root.add(found4View, 6, 0)
-    root.add(waste1View, 3, 1)
-    root.add(waste2View, 4, 1)
-    root.add(waste3View, 5, 1)
-    root.add(waste4View, 6, 1)
-    root.add(held, 2, 1)
+    root.add(sequenceLabel1, 3 ,1)
+    root.add(sequenceLabel2, 4, 1)
+    root.add(sequenceLabel3, 5, 1)
+    root.add(sequenceLabel4, 6, 1)
+    root.add(waste1View, 3, 2)
+    root.add(waste2View, 4, 2)
+    root.add(waste3View, 5, 2)
+    root.add(waste4View, 6, 2)
+    //root.add(held, 2, 1)
     //finish gui
     update()
     val vbox : VBox = new VBox()
@@ -427,6 +455,7 @@ class board extends Application {
     val scene = new Scene(vbox)
     primaryStage.setScene(scene)
     primaryStage.show()
+    primaryStage.setResizable(false)
   }
 }
 //main
