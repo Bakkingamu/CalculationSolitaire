@@ -10,61 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6307b77c-9541-4912-9eaf-34d870afee58" name="Default" comment="Added sequences that slowly get smaller as you insert cards into the foundation piles. Project completed unless we want to add an actual drag function.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/10_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/2_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/3_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/4_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/5_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/6_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/7_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/8_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/9_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/ace_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/black_joker.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/black_joker.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/jack_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/king_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_clubs.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_clubs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_diamonds.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_diamonds.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_hearts.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_hearts.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_spades.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/queen_of_spades.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/resources/red_joker.png" afterPath="$PROJECT_DIR$/src/CSolitaire/resources/red_joker.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/board.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/board.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSolitaire/Card.scala" afterPath="$PROJECT_DIR$/src/CSolitaire/Card.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,7 +30,7 @@
       <file leaf-file-name="board.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/board.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="17">
               <caret line="474" column="27" lean-forward="false" selection-start-line="474" selection-start-column="27" selection-end-line="474" selection-end-column="27" />
               <folding>
                 <element signature="e#64#101#0" expanded="true" />
@@ -95,8 +42,8 @@
       <file leaf-file-name="Card.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/Card.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="489">
+              <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -105,7 +52,7 @@
       <file leaf-file-name="Sequence.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/Sequence.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1441">
+            <state relative-caret-position="1819">
               <caret line="107" column="21" lean-forward="false" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
               <folding />
             </state>
@@ -125,7 +72,7 @@
       <file leaf-file-name="FoundationPile.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="782">
               <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <marker date="1493573041517" expanded="true" signature="1228:1232" ph="{...}" />
@@ -167,10 +114,10 @@
         <option value="$PROJECT_DIR$/src/CSolitaire/DiscardPile.scala" />
         <option value="$PROJECT_DIR$/src/CSolitaire/WastePile.scala" />
         <option value="$PROJECT_DIR$/src/CSolitaire/Deck.scala" />
-        <option value="$PROJECT_DIR$/src/CSolitaire/Card.scala" />
         <option value="$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala" />
         <option value="$PROJECT_DIR$/src/CSolitaire/Sequence.scala" />
         <option value="$PROJECT_DIR$/src/CSolitaire/board.scala" />
+        <option value="$PROJECT_DIR$/src/CSolitaire/Card.scala" />
       </list>
     </option>
   </component>
@@ -291,6 +238,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,7 +253,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -681,7 +628,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -690,9 +637,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21390937" sideWeight="0.5619792" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21390937" sideWeight="0.5640625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21390937" sideWeight="0.43802083" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21390937" sideWeight="0.4359375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49375" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1100,17 +1047,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSolitaire/Card.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CSolitaire/FoundationPile.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="782">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <marker date="1493573041517" expanded="true" signature="1228:1232" ph="{...}" />
@@ -1128,15 +1067,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSolitaire/Sequence.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1441">
+        <state relative-caret-position="1819">
           <caret line="107" column="21" lean-forward="false" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CSolitaire/Card.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSolitaire/board.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="17">
           <caret line="474" column="27" lean-forward="false" selection-start-line="474" selection-start-column="27" selection-end-line="474" selection-end-column="27" />
           <folding>
             <element signature="e#64#101#0" expanded="true" />

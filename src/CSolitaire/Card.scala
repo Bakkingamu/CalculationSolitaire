@@ -28,7 +28,6 @@ import SUIT._
         filename = "backr.png"
       else
         filename = value + "_of_" + suit + "s.png"
-      println(filename)
       new Image("CSolitaire/resources/" + filename)
     }
   }
